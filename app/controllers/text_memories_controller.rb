@@ -1,5 +1,6 @@
 class TextMemoriesController < ApplicationController
-  before_action :set_text_memory, only: [:show, :edit, :update, :destroy]
+  before_action :set_text_memory, only: [:show, :edit, :update, :destroy]  
+  before_action :authenticate_user!
 
   # GET /text_memories
   # GET /text_memories.json
@@ -14,7 +15,7 @@ class TextMemoriesController < ApplicationController
 
   # GET /text_memories/new
   def new
-    @text_memory = TextMemory.new
+    @text_memory = current_user.text_memories.new
   end
 
   # GET /text_memories/1/edit
@@ -24,7 +25,7 @@ class TextMemoriesController < ApplicationController
   # POST /text_memories
   # POST /text_memories.json
   def create
-    @text_memory = TextMemory.new(text_memory_params)
+    @text_memory = current_user.text_memories.new(text_memory_params)
 
     respond_to do |format|
       if @text_memory.save

@@ -19,3 +19,4 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+libreadline.7.0.dylib
