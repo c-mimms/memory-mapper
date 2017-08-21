@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  text: MyText
+  date: 2017-08-21 14:19:36
+  lat: 9.99
+  lon: 9.99
+
+two:
+  title: MyString
+  text: MyText
+  date: 2017-08-21 14:19:36
+  lat: 9.99
+  lon: 9.99
