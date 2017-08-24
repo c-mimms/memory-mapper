@@ -1,0 +1,16 @@
+<h2>Latest Text Memories</h2>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th><%= link_to "Text Memories", text_memories_path %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @text_memories.each do |text_memory| %>
+    <tr>
+      <td><%= link_to text_memory.title, text_memory %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

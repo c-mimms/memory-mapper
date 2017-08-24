@@ -65,7 +65,11 @@ class TextMemoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_text_memory
-      @text_memory = TextMemory.find(params[:id])
+      unless @text_memory = current_user.text_memories.where(id: params[:id]).first
+        flash[:alert] = 'TextMemory not found.'
+        redirect_to root_url
+      end
+      # @text_memory = TextMemory.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
